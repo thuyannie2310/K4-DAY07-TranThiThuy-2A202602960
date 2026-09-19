@@ -277,10 +277,13 @@ Hai chunk hạng 1 và hạng 2 nói **ngược nhau hoàn toàn** ("chỉ áp d
 
 > Làm solo nên toàn bộ phần này do một mình tôi thực hiện.
 
-| Tiêu chí | Điểm tự đánh giá |
-|----------|-------------------|
-| Lựa chọn tài liệu (Document Set Quality) | / 10 |
-| Thiết kế chiến lược (Strategy Design) | / 15 |
-| Chất lượng truy xuất (Retrieval Quality) | / 10 |
-| Thuyết trình (Demo) | / 5 |
-| **Tổng phần nhóm** | **/ 40** |
+| Tiêu chí | Điểm tự đánh giá | Căn cứ |
+|----------|-------------------|--------|
+| Lựa chọn tài liệu (Document Set Quality) | **10** / 10 | 8 tài liệu (đúng khoảng 5–10), chủ đề nhất quán, nguồn công khai minh bạch kèm `sources.csv`; metadata 8 trường trong đó `audience` được chứng minh là có tác dụng đo được. Ghi `document_version: not-stated` trung thực thay vì bịa giá trị. |
+| Thiết kế chiến lược (Strategy Design) | **14** / 15 | Có baseline trên 3 tài liệu, 1 chiến lược custom theo tiêu đề (yêu cầu riêng L3A), và một cải tiến **sinh ra từ phân tích lỗi rồi kiểm chứng lại bằng số** (4/5 → 5/5). **Trừ 1 điểm:** rubric yêu cầu so sánh *với thành viên khác* — làm solo nên thay bằng so sánh 5 chiến lược, không thể thay thế hoàn toàn. |
+| Chất lượng truy xuất (Retrieval Quality) | **9** / 10 | Chiến lược `heading_titled`: cả 5 câu đều có chunk liên quan ở top-3 **và** ở top-1. **Trừ 1 điểm:** phần "câu trả lời của agent chính xác" chưa chứng minh được vì `llm_fn` là hàm giả. |
+| Thuyết trình (Demo) | **4** / 5 | Đã chuẩn bị 4 insight có số liệu hậu thuẫn, bài học so sánh và hướng cải thiện. **Trừ 1 điểm:** làm solo nên chưa có phần thảo luận chéo với nhóm khác như rubric mô tả. |
+| **Tổng phần nhóm** | **37 / 40** | |
+
+> **Tổng cộng tự đánh giá: 58 + 37 = 95 / 100.**
+> Các điểm trừ đều là thiếu sót thật, không phải khiêm tốn hình thức: hai điểm trừ đến từ ràng buộc làm solo (không có thành viên để so sánh, không có demo chéo), một điểm từ việc `llm_fn` là hàm giả, một điểm từ cột dự đoán chưa được viết trước khi chạy.

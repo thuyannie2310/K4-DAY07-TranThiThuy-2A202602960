@@ -179,5 +179,5 @@ Tìm ít nhất **1 trường hợp lỗi (failure case)** trong quá trình so 
 
 - [x] Vượt qua tất cả các bài kiểm thử (tests): `pytest tests/ -v` — **42/42 passed**
 - [x] Cập nhật thư mục `src/` (cá nhân)
-- [ ] Hoàn thành báo cáo nhóm (`report/REPORT_NHOM.md` — 1 file/nhóm)
-- [ ] Hoàn thành báo cáo cá nhân (`report/REPORT_CANHAN.md` — 1 file/sinh viên)
+- [x] Hoàn thành báo cáo nhóm (`report/REPORT_NHOM.md`) — tự đánh giá **37/40**
+- [x] Hoàn thành báo cáo cá nhân (`report/REPORT_CANHAN.md`) — tự đánh giá **58/60**

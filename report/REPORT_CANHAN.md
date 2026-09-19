@@ -159,11 +159,11 @@ Chạy **5 câu hỏi đánh giá** trên mã nguồn của tôi trong gói `src
 
 ## Tự Đánh Giá (Phần Cá Nhân)
 
-| Tiêu chí | Điểm tự đánh giá |
-|----------|-------------------|
-| Khởi động (Warm-up) | / 5 |
-| Hướng tiếp cận của tôi (My Approach) | / 10 |
-| Hoàn thiện code (Core Implementation — tests) | / 30 |
-| Dự đoán độ tương tự (Similarity Predictions) | / 5 |
-| Kết quả truy xuất của tôi (Competition Results) | / 10 |
-| **Tổng phần cá nhân** | **/ 60** |
+| Tiêu chí | Điểm tự đánh giá | Căn cứ |
+|----------|-------------------|--------|
+| Khởi động (Warm-up) | **5** / 5 | Giải thích cosine kèm ví dụ **đo thật** (0,9154 so với 0,5686) thay vì ví dụ giả định; phép tính chunking đối chiếu với `FixedSizeChunker` cho đúng 23 và 25. |
+| Hướng tiếp cận của tôi (My Approach) | **10** / 10 | Trình bày đủ 4 nhóm hàm kèm **lý do thiết kế**, edge case đã xử lý, và tự chỉ ra hạn chế (`by_sentences` mất kiểm soát độ dài; `answer()` chưa hỗ trợ filter). |
+| Hoàn thiện code (Core Implementation — tests) | **30** / 30 | 42/42 tests pass — tiêu chí khách quan, không có phần diễn giải. Log: `report/runs/pytest.txt`. |
+| Dự đoán độ tương tự (Similarity Predictions) | **4** / 5 | 5 cặp câu đa dạng, điểm thật, phản tư tốt về phủ định. **Trừ 1 điểm:** cột "Dự đoán" hiện là dự đoán suy ngược sau khi đã biết kết quả, chưa phải dự đoán viết ra *trước khi chạy* như bài tập yêu cầu. |
+| Kết quả truy xuất của tôi (Competition Results) | **9** / 10 | hit@3 = 5/5, P@1 = 5/5, và gold fact xuất hiện nguyên văn trong ngữ cảnh 5/5. **Trừ 1 điểm:** rubric đòi "câu trả lời của agent chính xác", nhưng `llm_fn` dùng ở đây là hàm giả nên mới chứng minh được *agent có đủ dữ kiện*, chưa chứng minh được *agent trả lời đúng*. |
+| **Tổng phần cá nhân** | **58 / 60** | |
