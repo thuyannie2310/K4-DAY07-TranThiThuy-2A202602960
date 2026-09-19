@@ -1,0 +1,241 @@
+Embedding backend: gemini-embedding-001 (provider=gemini)
+
+==============================================================================
+STRATEGY: by_sentences   chunks=80   avg_len=505   max_len=2332
+==============================================================================
+
+Q1: Sinh viên được mượn tối đa bao nhiêu tài liệu về nhà và trong bao nhiêu ngày?
+   gold : Sinh viên, học viên: 3 tài liệu, 10 ngày, được gia hạn 1 lần thêm 10 ngày.
+   filter: -
+   1. +0.827 [huit-faq-thu-vien] Muốn mượn sách thư viện về nhà phải làm như thế nào? Mỗi lần mượn được mấy cuốn và thời gi...    
+   2. +0.820 [huit-muon-sinh-vien] # Quy định mượn trả tài liệu dành cho sinh viên, học viên - Thư viện HUIT Tài liệu này tác... <<<
+   3. +0.811 [huit-luu-hanh-tai-lieu] ## 2. Dịch vụ cho mượn về Là dịch vụ hỗ trợ nhu cầu học tập và nghiên cứu tài liệu dành ch...    
+   -> hit@3: YES   P@1: NO
+
+Q2: Phí trễ hạn khi mượn liên thư viện là bao nhiêu một ngày?
+   gold : 5.000đ/tài liệu/ngày.
+   filter: -
+   1. +0.806 [huit-muon-sinh-vien] ## Xử lý tài liệu mượn quá hạn Nếu quá thời hạn được phép mượn về nhà, hoặc trả quá hạn so...    
+   2. +0.793 [huit-quy-dinh-chung] Nếu người sử dụng báo sau thời hạn trả tài liệu thì phải đền mất tài liệu theo quy định, đ...    
+   3. +0.791 [huit-muon-giang-vien] ## Tiền thế chân Không áp dụng thu tiền thế chân đối với giảng viên, viên chức đang công t...    
+   -> hit@3: NO   P@1: NO
+
+Q3: Phòng học nhóm ở tầng mấy, chứa được bao nhiêu người và dùng được bao lâu mỗi lượt?
+   gold : Tầng 3, 05-07 người, 02 giờ/lượt, được gia hạn khi không có người chờ.
+   filter: -
+   1. +0.777 [huit-phong-hoc-nhom] # Hướng dẫn sử dụng phòng học nhóm / phòng thuyết trình ## Các loại phòng | Loại phòng | S... <<<
+   2. +0.722 [huit-huong-dan-su-dung] Thời gian hoạt động và không gian tiện ích tại các tầng Thư viện có 4 tầng, không gian tiệ...    
+   3. +0.709 [huit-faq-thu-vien] TẦNG 4 - Giờ hoạt động: Từ 8:00 - 17:00. Tiện ích: Phòng thực hành thuyết trình (15 - 20 c...    
+   -> hit@3: YES   P@1: YES
+
+Q4: Đặt phòng xong mà đến trễ thì có bị hủy không?
+   gold : Bị hủy nếu người đặt đến trễ trên 15 phút so với thời gian đăng ký.
+   filter: -
+   1. +0.766 [huit-phong-hoc-nhom] ## Lưu ý - Kết quả đặt phòng sẽ bị hủy trong trường hợp người đặt đến trễ trên 15 phút so ... <<<
+   2. +0.755 [huit-quy-dinh-chung] b. Người đăng ký nhận kết quả đặt phòng sau 15 phút. c. Kết quả đặt phòng sẽ bị hủy trong ...    
+   3. +0.701 [huit-quy-dinh-chung] Thời gian sử dụng 120 phút/lượt, được phép gia hạn khi không có người chờ mượn (thời gian ...    
+   -> hit@3: YES   P@1: YES
+
+Q5: Tiền thế chân được hoàn trả khi nào?
+   gold : Thư viện hoàn trả tiền thế chân ngay khi người sử dụng đã hoàn tất công nợ và không còn nhu cầu sử dụng thư viện.
+   filter: -
+   1. +0.827 [huit-quy-dinh-chung] Quy định về tiền thế chân a. Tiền thế chân là khoản tiền được thu để ràng buộc trách nhiệm...    
+   2. +0.786 [huit-muon-sinh-vien] Mức tiền đóng thế chân tùy thuộc vào nhu cầu mượn sách của người sử dụng. Tổng giá trị tài... <<<
+   3. +0.769 [huit-faq-thu-vien] Tiền thế chân sẽ được trả lại khi sinh viên/học viên ra trường hoặc không còn nhu cầu mượn...    
+   -> hit@3: YES   P@1: NO
+
+   SUMMARY by_sentences: hit@3 = 4/5   P@1 = 2/5
+
+==============================================================================
+STRATEGY: fixed_size   chunks=61   avg_len=753   max_len=800
+==============================================================================
+
+Q1: Sinh viên được mượn tối đa bao nhiêu tài liệu về nhà và trong bao nhiêu ngày?
+   gold : Sinh viên, học viên: 3 tài liệu, 10 ngày, được gia hạn 1 lần thêm 10 ngày.
+   filter: -
+   1. +0.828 [huit-muon-sinh-vien] # Quy định mượn trả tài liệu dành cho sinh viên, học viên - Thư viện HUIT Tài liệu này tác... <<<
+   2. +0.807 [huit-muon-sinh-vien] tốt nghiệp), mỗi lần chọn không quá 2 tài liệu/lượt mượn; tài liệu được chọn mượn về (tài ... <<<
+   3. +0.793 [huit-muon-giang-vien] ## Đọc tại chỗ và mượn về Người sử dụng chọn tài liệu đọc tại Thư viện theo nhu cầu cá nhâ...    
+   -> hit@3: YES   P@1: YES
+
+Q2: Phí trễ hạn khi mượn liên thư viện là bao nhiêu một ngày?
+   gold : 5.000đ/tài liệu/ngày.
+   filter: -
+   1. +0.785 [huit-muon-sinh-vien] thời hạn được phép mượn về nhà, hoặc trả quá hạn so với yêu cầu thu hồi tài liệu của Thư v...    
+   2. +0.778 [huit-faq-thu-vien] n đọc phải thanh toán lệ phí quá hạn là: - Tài liệu mượn về nhà (có nhãn sách màu trắng): ...    
+   3. +0.745 [huit-faq-thu-vien] hoặc không còn nhu cầu mượn sách một thời gian dài. Thư viện không giải quyết việc người s...    
+   -> hit@3: NO   P@1: NO
+
+Q3: Phòng học nhóm ở tầng mấy, chứa được bao nhiêu người và dùng được bao lâu mỗi lượt?
+   gold : Tầng 3, 05-07 người, 02 giờ/lượt, được gia hạn khi không có người chờ.
+   filter: -
+   1. +0.813 [huit-phong-hoc-nhom] # Hướng dẫn sử dụng phòng học nhóm / phòng thuyết trình ## Các loại phòng | Loại phòng | S... <<<
+   2. +0.712 [huit-phong-hoc-nhom] minh (65 inch) | 08 - 20 người | 02 giờ/lượt, được phép gia hạn khi không có người chờ mượ... <<<
+   3. +0.702 [huit-huong-dan-su-dung] o | | Tầng 2 (402 m2) | 7:00 - 18:30 | Không gian học tập chung (142 chỗ ngồi); Khu hành c...    
+   -> hit@3: YES   P@1: YES
+
+Q4: Đặt phòng xong mà đến trễ thì có bị hủy không?
+   gold : Bị hủy nếu người đặt đến trễ trên 15 phút so với thời gian đăng ký.
+   filter: -
+   1. +0.797 [huit-phong-hoc-nhom] t quả đặt phòng sẽ bị hủy trong trường hợp người đặt đến trễ trên 15 phút so với thời gian... <<<
+   2. +0.693 [huit-quy-dinh-chung] uầy thông tin, hoặc đăng ký trực tuyến tại địa chỉ Thư viện Trường Đại Học Công Thương TP....    
+   3. +0.638 [huit-phong-hoc-nhom] minh (65 inch) | 08 - 20 người | 02 giờ/lượt, được phép gia hạn khi không có người chờ mượ... <<<
+   -> hit@3: YES   P@1: YES
+
+Q5: Tiền thế chân được hoàn trả khi nào?
+   gold : Thư viện hoàn trả tiền thế chân ngay khi người sử dụng đã hoàn tất công nợ và không còn nhu cầu sử dụng thư viện.
+   filter: -
+   1. +0.703 [huit-muon-sinh-vien] tốt nghiệp), mỗi lần chọn không quá 2 tài liệu/lượt mượn; tài liệu được chọn mượn về (tài ... <<<
+   2. +0.683 [huit-quy-dinh-chung] ử dụng phải gia hạn thẻ hàng năm để tiếp tục sử dụng các dịch vụ thư viện. ## 3. Quy định ...    
+   3. +0.664 [huit-muon-giang-vien] ## Đọc tại chỗ và mượn về Người sử dụng chọn tài liệu đọc tại Thư viện theo nhu cầu cá nhâ...    
+   -> hit@3: YES   P@1: YES
+
+   SUMMARY fixed_size: hit@3 = 4/5   P@1 = 4/5
+
+==============================================================================
+STRATEGY: heading   chunks=88   avg_len=472   max_len=829
+==============================================================================
+
+Q1: Sinh viên được mượn tối đa bao nhiêu tài liệu về nhà và trong bao nhiêu ngày?
+   gold : Sinh viên, học viên: 3 tài liệu, 10 ngày, được gia hạn 1 lần thêm 10 ngày.
+   filter: -
+   1. +0.848 [huit-luu-hanh-tai-lieu] ### Hạn mức mượn tài liệu về nhà theo từng đối tượng | Đối tượng | Số lượng tài liệu | Số ...    
+   2. +0.838 [huit-luu-hanh-tai-lieu] ## Hạn mức mượn tài liệu về nhà theo từng đối tượng Dịch vụ lưu hành tài liệu hỗ trợ tối đ...    
+   3. +0.838 [huit-muon-sinh-vien] ## Hạn mức mượn tài liệu về nhà | Đối tượng | Số lượng tài liệu | Số ngày | Gia hạn (số lầ... <<<
+   -> hit@3: YES   P@1: NO
+
+Q2: Phí trễ hạn khi mượn liên thư viện là bao nhiêu một ngày?
+   gold : 5.000đ/tài liệu/ngày.
+   filter: -
+   1. +0.809 [huit-faq-thu-vien] ## 7. Nếu trả sách trễ hạn phải nộp phạt như thế nào? Giữ sách quá hạn bạn đọc phải thanh ...    
+   2. +0.803 [huit-muon-sinh-vien] ## Xử lý tài liệu mượn quá hạn Nếu quá thời hạn được phép mượn về nhà, hoặc trả quá hạn so...    
+   3. +0.800 [huit-muon-giang-vien] ## Xử lý tài liệu mượn quá hạn Nếu quá thời hạn được phép mượn về nhà, hoặc trả quá hạn so...    
+   -> hit@3: NO   P@1: NO
+
+Q3: Phòng học nhóm ở tầng mấy, chứa được bao nhiêu người và dùng được bao lâu mỗi lượt?
+   gold : Tầng 3, 05-07 người, 02 giờ/lượt, được gia hạn khi không có người chờ.
+   filter: -
+   1. +0.813 [huit-phong-hoc-nhom] ## Các loại phòng | Loại phòng | Số lượng phòng | Vị trí | Mục đích sử dụng | Trang thiết ... <<<
+   2. +0.797 [huit-phong-hoc-nhom] # Hướng dẫn sử dụng phòng học nhóm / phòng thuyết trình... <<<
+   3. +0.758 [huit-huong-dan-su-dung] ## 4. Thời gian hoạt động và không gian tiện ích tại các tầng | Tầng 3 (443 m2) | 7:00 - 1...    
+   -> hit@3: YES   P@1: YES
+
+Q4: Đặt phòng xong mà đến trễ thì có bị hủy không?
+   gold : Bị hủy nếu người đặt đến trễ trên 15 phút so với thời gian đăng ký.
+   filter: -
+   1. +0.772 [huit-phong-hoc-nhom] ## Lưu ý - Kết quả đặt phòng sẽ bị hủy trong trường hợp người đặt đến trễ trên 15 phút so ... <<<
+   2. +0.696 [huit-quy-dinh-chung] ## 9. Quy định sử dụng không gian và tiện ích của Thư viện a. Đăng ký sử dụng không gian v...    
+   3. +0.637 [huit-muon-lien-thu-vien] ## Quy định - Đối với tài liệu được mượn: Thực hiện theo quy định của từng thư viện. - Đối...    
+   -> hit@3: YES   P@1: YES
+
+Q5: Tiền thế chân được hoàn trả khi nào?
+   gold : Thư viện hoàn trả tiền thế chân ngay khi người sử dụng đã hoàn tất công nợ và không còn nhu cầu sử dụng thư viện.
+   filter: -
+   1. +0.792 [huit-muon-sinh-vien] ## Tiền thế chân Việc thu tiền thế chân chỉ áp dụng đối với học sinh, sinh viên, học viên ... <<<
+   2. +0.790 [huit-muon-giang-vien] ## Tiền thế chân Không áp dụng thu tiền thế chân đối với giảng viên, viên chức đang công t...    
+   3. +0.765 [huit-quy-dinh-chung] ## 3. Quy định về tiền thế chân a. Tiền thế chân là khoản tiền được thu để ràng buộc trách...    
+   -> hit@3: YES   P@1: YES
+
+   SUMMARY heading: hit@3 = 4/5   P@1 = 3/5
+
+==============================================================================
+STRATEGY: heading_titled   chunks=88   avg_len=504   max_len=868
+==============================================================================
+
+Q1: Sinh viên được mượn tối đa bao nhiêu tài liệu về nhà và trong bao nhiêu ngày?
+   gold : Sinh viên, học viên: 3 tài liệu, 10 ngày, được gia hạn 1 lần thêm 10 ngày.
+   filter: -
+   1. +0.849 [huit-luu-hanh-tai-lieu] [Lưu hành tài liệu] ### Hạn mức mượn tài liệu về nhà theo từng đối tượng | Đối tượng | Số ...    
+   2. +0.838 [huit-luu-hanh-tai-lieu] ## Hạn mức mượn tài liệu về nhà theo từng đối tượng Dịch vụ lưu hành tài liệu hỗ trợ tối đ...    
+   3. +0.833 [huit-muon-sinh-vien] [Quy định mượn trả tài liệu dành cho sinh viên, học viên - Thư viện HUIT] ## Hạn mức mượn ... <<<
+   -> hit@3: YES   P@1: NO
+
+Q2: Phí trễ hạn khi mượn liên thư viện là bao nhiêu một ngày?
+   gold : 5.000đ/tài liệu/ngày.
+   filter: -
+   1. +0.829 [huit-muon-lien-thu-vien] [Mượn liên thư viện] ## Quy định - Đối với tài liệu được mượn: Thực hiện theo quy định của... <<<
+   2. +0.807 [huit-faq-thu-vien] [Câu hỏi thường gặp thư viện] ## 7. Nếu trả sách trễ hạn phải nộp phạt như thế nào? Giữ sá...    
+   3. +0.777 [huit-muon-sinh-vien] [Quy định mượn trả tài liệu dành cho sinh viên, học viên - Thư viện HUIT] ## Xử lý tài liệ...    
+   -> hit@3: YES   P@1: YES
+
+Q3: Phòng học nhóm ở tầng mấy, chứa được bao nhiêu người và dùng được bao lâu mỗi lượt?
+   gold : Tầng 3, 05-07 người, 02 giờ/lượt, được gia hạn khi không có người chờ.
+   filter: -
+   1. +0.829 [huit-phong-hoc-nhom] [Hướng dẫn sử dụng phòng học nhóm] ## Các loại phòng | Loại phòng | Số lượng phòng | Vị tr... <<<
+   2. +0.797 [huit-phong-hoc-nhom] # Hướng dẫn sử dụng phòng học nhóm / phòng thuyết trình... <<<
+   3. +0.745 [huit-phong-hoc-nhom] [Hướng dẫn sử dụng phòng học nhóm] ## Hướng dẫn sử dụng Bước 1: Đăng ký sử dụng phòng học ... <<<
+   -> hit@3: YES   P@1: YES
+
+Q4: Đặt phòng xong mà đến trễ thì có bị hủy không?
+   gold : Bị hủy nếu người đặt đến trễ trên 15 phút so với thời gian đăng ký.
+   filter: -
+   1. +0.753 [huit-phong-hoc-nhom] [Hướng dẫn sử dụng phòng học nhóm] ## Lưu ý - Kết quả đặt phòng sẽ bị hủy trong trường hợp... <<<
+   2. +0.692 [huit-quy-dinh-chung] [Quy định chung sử dụng thư viện HUIT] ## 9. Quy định sử dụng không gian và tiện ích của T...    
+   3. +0.626 [huit-phong-hoc-nhom] [Hướng dẫn sử dụng phòng học nhóm] ## Hướng dẫn sử dụng Bước 1: Đăng ký sử dụng phòng học ... <<<
+   -> hit@3: YES   P@1: YES
+
+Q5: Tiền thế chân được hoàn trả khi nào?
+   gold : Thư viện hoàn trả tiền thế chân ngay khi người sử dụng đã hoàn tất công nợ và không còn nhu cầu sử dụng thư viện.
+   filter: -
+   1. +0.767 [huit-muon-sinh-vien] [Quy định mượn trả tài liệu dành cho sinh viên, học viên - Thư viện HUIT] ## Tiền thế chân... <<<
+   2. +0.761 [huit-quy-dinh-chung] [Quy định chung sử dụng thư viện HUIT] ## 3. Quy định về tiền thế chân a. Tiền thế chân là...    
+   3. +0.706 [huit-muon-giang-vien] [Quy định mượn trả tài liệu dành cho giảng viên, viên chức - Thư viện HUIT] ## Tiền thế ch...    
+   -> hit@3: YES   P@1: YES
+
+   SUMMARY heading_titled: hit@3 = 5/5   P@1 = 4/5
+
+==============================================================================
+STRATEGY: recursive   chunks=64   avg_len=633   max_len=799
+==============================================================================
+
+Q1: Sinh viên được mượn tối đa bao nhiêu tài liệu về nhà và trong bao nhiêu ngày?
+   gold : Sinh viên, học viên: 3 tài liệu, 10 ngày, được gia hạn 1 lần thêm 10 ngày.
+   filter: -
+   1. +0.829 [huit-muon-sinh-vien] # Quy định mượn trả tài liệu dành cho sinh viên, học viên - Thư viện HUIT Tài liệu này tác... <<<
+   2. +0.808 [huit-faq-thu-vien] Thư viện cho người sử dụng mượn sách miễn phí. Tuy nhiên, để mượn sách về nhà, người sử dụ...    
+   3. +0.802 [huit-muon-lien-thu-vien] - Đối với tài liệu được mượn: Thực hiện theo quy định của từng thư viện. - Đối với tài liệ...    
+   -> hit@3: YES   P@1: YES
+
+Q2: Phí trễ hạn khi mượn liên thư viện là bao nhiêu một ngày?
+   gold : 5.000đ/tài liệu/ngày.
+   filter: -
+   1. +0.774 [huit-muon-lien-thu-vien] - Đối với tài liệu được mượn: Thực hiện theo quy định của từng thư viện. - Đối với tài liệ... <<<
+   2. +0.772 [huit-muon-sinh-vien] Tiền thế chân được thu ngay khi đăng ký làm thẻ tại thư viện. Thư viện sẽ hoàn trả tiền th...    
+   3. +0.760 [huit-quy-dinh-chung] Người sử dụng có trách nhiệm trả tài liệu đúng hạn. Trong trường hợp mất tài liệu, người s...    
+   -> hit@3: YES   P@1: YES
+
+Q3: Phòng học nhóm ở tầng mấy, chứa được bao nhiêu người và dùng được bao lâu mỗi lượt?
+   gold : Tầng 3, 05-07 người, 02 giờ/lượt, được gia hạn khi không có người chờ.
+   filter: -
+   1. +0.819 [huit-phong-hoc-nhom] # Hướng dẫn sử dụng phòng học nhóm / phòng thuyết trình ## Các loại phòng | Loại phòng | S... <<<
+   2. +0.750 [huit-huong-dan-su-dung] | Tầng 3 (443 m2) | 7:00 - 19:30 | Không gian học tập chung (188 chỗ ngồi); 04 phòng thảo ...    
+   3. +0.714 [huit-faq-thu-vien] TẦNG 3 - Giờ hoạt động: Từ 7:00 - 19:30. Tiện ích: Phòng thảo luận nhóm (7-10 chỗ ngồi); P...    
+   -> hit@3: YES   P@1: YES
+
+Q4: Đặt phòng xong mà đến trễ thì có bị hủy không?
+   gold : Bị hủy nếu người đặt đến trễ trên 15 phút so với thời gian đăng ký.
+   filter: -
+   1. +0.780 [huit-phong-hoc-nhom] - Kết quả đặt phòng sẽ bị hủy trong trường hợp người đặt đến trễ trên 15 phút so với thời ... <<<
+   2. +0.748 [huit-quy-dinh-chung] c. Kết quả đặt phòng sẽ bị hủy trong trường hợp người đặt đến trễ trên 15 phút so với thời...    
+   3. +0.636 [huit-phong-hoc-nhom] ## Hướng dẫn sử dụng Bước 1: Đăng ký sử dụng phòng học nhóm, phòng thuyết trình,... của Th... <<<
+   -> hit@3: YES   P@1: YES
+
+Q5: Tiền thế chân được hoàn trả khi nào?
+   gold : Thư viện hoàn trả tiền thế chân ngay khi người sử dụng đã hoàn tất công nợ và không còn nhu cầu sử dụng thư viện.
+   filter: -
+   1. +0.792 [huit-muon-sinh-vien] Tiền thế chân được thu ngay khi đăng ký làm thẻ tại thư viện. Thư viện sẽ hoàn trả tiền th... <<<
+   2. +0.721 [huit-quy-dinh-chung] b. Thư viện sẽ hoàn trả tiền thế chân ngay khi người sử dụng đã hoàn tất công nợ và không ...    
+   3. +0.709 [huit-faq-thu-vien] Thư viện cho người sử dụng mượn sách miễn phí. Tuy nhiên, để mượn sách về nhà, người sử dụ...    
+   -> hit@3: YES   P@1: YES
+
+   SUMMARY recursive: hit@3 = 5/5   P@1 = 5/5
+
+==============================================================================
+OVERALL
+==============================================================================
+strategy          chunks  avg_len    hit@3    P@1
+by_sentences          80      505      4/5    2/5
+fixed_size            61      753      4/5    4/5
+heading               88      472      4/5    3/5
+heading_titled        88      504      5/5    4/5
+recursive             64      633      5/5    5/5

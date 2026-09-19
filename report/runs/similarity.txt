@@ -1,0 +1,6 @@
+#    score  note                                   A | B
+1  +0.9154  Diễn đạt lại cùng ý                    'Sinh viên được mượn mấy cuốn sách?' | 'Hạn mức mượn tài liệu về nhà của sinh viên là bao nhiêu?'
+2  +0.8660  Trùng từ khóa nhưng khác dịch vụ       'Phí trễ hạn khi mượn liên thư viện' | 'Tiền phạt khi trả sách quá hạn tại thư viện trường'
+3  +0.8373  Song ngữ, cùng nội dung                'Sinh viên được mượn 3 tài liệu trong 10 ngày' | 'Students may borrow 3 items for 10 days'
+4  +0.5686  Hai chủ đề không liên quan             'Tiền thế chân được hoàn trả khi nào?' | 'Phòng hội thảo có màn hình tương tác 100 inch'
+5  +0.8829  Cùng chủ đề nhưng nội dung phủ định nhau 'Giảng viên không phải đóng tiền thế chân' | 'Sinh viên phải đóng tiền thế chân'

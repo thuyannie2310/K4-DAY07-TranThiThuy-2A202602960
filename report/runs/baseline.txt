@@ -1,0 +1,18 @@
+
+huit-muon-sinh-vien (2403 chars)
+   fixed_size         count=  4 avg=  660.8 min= 243 max=  800
+   by_sentences       count=  6 avg=  397.7 min=  81 max=  852
+   recursive          count=  4 avg=  599.0 min= 514 max=  705
+   heading (custom)   count=  6 avg=  397.7 min= 186 max=  631
+
+huit-phong-hoc-nhom (1879 chars)
+   fixed_size         count=  3 avg=  679.7 min= 439 max=  800
+   by_sentences       count=  3 avg=  624.3 min= 196 max= 1187
+   recursive          count=  3 avg=  624.7 min= 482 max=  793
+   heading (custom)   count=  4 avg=  467.2 min=  55 max=  735
+
+huit-faq-thu-vien (12056 chars)
+   fixed_size         count= 17 avg=  784.5 min= 536 max=  800
+   by_sentences       count= 32 avg=  374.4 min= 102 max= 2289
+   recursive          count= 19 avg=  632.7 min=  72 max=  774
+   heading (custom)   count= 25 avg=  494.3 min=  29 max=  782

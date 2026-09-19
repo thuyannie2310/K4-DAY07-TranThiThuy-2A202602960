@@ -1,0 +1,16 @@
+backend=gemini  strategy=heading_titled  top_k=3
+
+Q1 grounded=YES
+     ✔ '| Sinh viên, học viên | 3 | 10 | 1 | 10 |'
+Q2 grounded=YES
+     ✔ '5.000đ/tài liệu/ngày'
+Q3 grounded=YES
+     ✔ 'Tầng 3'
+     ✔ '05 - 07 người'
+     ✔ '02 giờ/lượt'
+Q4 grounded=YES
+     ✔ 'trễ trên 15 phút'
+Q5 grounded=YES
+     ✔ 'hoàn tất công nợ'
+
+GROUNDED: 5/5 — gold fact có mặt nguyên văn trong ngữ cảnh đưa vào prompt
